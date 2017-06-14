@@ -7,10 +7,18 @@ namespace AbstractFactory
         static void Main(string[] args)
         {
             var samsungFactory = new SamsungFactory();
-            var phone = samsungFactory.GetPhone();
-            var tablet = samsungFactory.GetTablet();
+            var samsungPhone = samsungFactory.GetPhone();
+            var samsungTablet = samsungFactory.GetTablet();
 
-            Console.WriteLine($"Phone - {phone.Name}\nTablet - {tablet.Name}");
+            Console.WriteLine("Samsung factory:");
+            Console.WriteLine($"Phone - {samsungPhone.Name}\nTablet - {samsungTablet.Name}");
+
+            var appleFactory = new AppleFactory();
+            var applePhone = appleFactory.GetPhone();
+            var appleTablet = appleFactory.GetTablet();
+
+            Console.WriteLine("Apple factory:");
+            Console.WriteLine($"Phone - {applePhone.Name}\nTablet - {appleTablet.Name}");
         }
     }
 
@@ -55,7 +63,7 @@ namespace AbstractFactory
     {
         public IPhone()
         {
-            this.Name = "Samsung Galaxy S8.";
+            this.Name = "IPhone 7.";
         }
     }
 
